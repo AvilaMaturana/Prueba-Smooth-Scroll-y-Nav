@@ -1,0 +1,29 @@
+$(document).ready(function(){
+   
+    $("a").on('click', function(event) {
+  
+    
+      if (this.hash !== "") {
+        
+        event.preventDefault();
+  
+       
+        var hash = this.hash;
+  
+       
+        $('html, body').animate({
+          scrollTop: $(hash).offset().top
+        }, 300, function(){
+     
+          
+          window.location.hash = hash;
+        });
+      } 
+    });
+  });
+
+
+  window.addEventListener('scroll', function(){
+      var nav = document.querySelector('nav');
+      nav.classList.toggle('abajo' , window.scrollY>0);
+  })
